@@ -42,13 +42,13 @@ fi
 
 cd /app &>>LOGFILE
 
-unzip /tmp/catalogue.zip  
+unzip /tmp/catalogue.zip  &>>LOGFILE
 VALIDATE $? "unzipping"
 
 npm install 
 VALIDATE $? "installing npm--dependencies"
 
-cp /home/centos/roboshop-project/catalogue.service /etc/systemd/system/catalogue.service &>>LOGFILE
+cp /root/roboshop-project/catalogue.service /etc/systemd/system/catalogue.service &>>LOGFILE
 VALIDATE $? "copying catalogue.service"
 
 systemctl daemon-reload &>>LOGFILE
