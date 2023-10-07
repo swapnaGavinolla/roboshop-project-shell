@@ -30,11 +30,11 @@ VALIDATE $? "npm source setup "
 yum install nodejs -y &>>LOGFILE
 VALIDATE $? "installing nodejs"
 
-useradd roboshop &>>LOGFILE
-VALIDATE $? "adding user"
+#useradd roboshop &>>LOGFILE
+#VALIDATE $? "adding user"
 
-mkdir /app &>>LOGFILE
-VALIDATE $? "creating directory"
+#mkdir /app &>>LOGFILE
+#VALIDATE $? "creating directory"
 
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>>LOGFILE
@@ -42,7 +42,7 @@ VALIDATE $? "downloading app code"
 
 cd /app &>>LOGFILE
 
-npm install &>>LOGFILE
+npm install 
 VALIDATE $? "installing npm--dependencies"
 
 cp catalogue.service /etc/systemd/system/catalogue.service &>>LOGFILE
