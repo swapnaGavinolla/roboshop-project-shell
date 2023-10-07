@@ -42,7 +42,7 @@ VALIDATE $? "downloading app code"
 
 cd /app &>>LOGFILE
 
-unzip /tmp/catalogue.zip  
+unzip /tmp/catalogue.zip -y
 VALIDATE $? "unzipping"
 
 npm install -y
