@@ -44,7 +44,7 @@ cd /usr/share/nginx/html &>>LOGFILE
 VALIDATE $? "extracting frontend data"
 
 
-unzip /tmp/web.zip &>>LOGFILE
+unzip /tmp/web.zip 
 VALIDATE $? "unzipping"
 
 systemctl restart nginx  &>>LOGFILE

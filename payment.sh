@@ -38,7 +38,7 @@ VALIDATE $? "downloading app code"
 
 cd /app &>>LOGFILE
 
-unzip /tmp/payment.zip &>>LOGFILE
+unzip /tmp/payment.zip 
 VALIDATE $? "unzipping"
 
 cd /app &>>LOGFILE
