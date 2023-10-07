@@ -60,7 +60,7 @@ VALIDATE $? "enabling catalogue"
 systemctl start catalogue &>>LOGFILE
 VALIDATE $? "staring  catalogue"
 
-cp /home/centos/roboshop-project/mango.repo /etc/yum.repos.d/mongo.repo &>>LOGFILE
+cp mango.repo /etc/yum.repos.d/mongo.repo &>>LOGFILE
 VALIDATE $? "copying mango.repo"
 
 yum install mongodb-org-shell -y &>>LOGFILE
