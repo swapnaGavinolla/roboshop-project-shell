@@ -30,11 +30,11 @@ VALIDATE $? "npm source setup "
 yum install nodejs -y &>>LOGFILE
 VALIDATE $? "installing nodejs"
 
-#useradd roboshop &>>LOGFILE
-#VALIDATE $? "adding user"
+useradd roboshop &>>LOGFILE
+VALIDATE $? "adding user"
 
-#mkdir /app &>>LOGFILE
-#VALIDATE $? "creating directory"
+mkdir /app &>>LOGFILE
+VALIDATE $? "creating directory"
 
 
 curl -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>>LOGFILE
@@ -42,13 +42,13 @@ VALIDATE $? "downloading app code"
 
 cd /app &>>LOGFILE
 
-unzip /tmp/user.zip  &>>LOGFILE
+unzip /tmp/user.zip 
 VALIDATE $? "unzipping"
 
-npm install 
+npm install -y &>>LOGFILE
 VALIDATE $? "installing npm--dependencies"
 
-cp /home/centos/roboshop-project/user.service /etc/systemd/system/user.service &>>LOGFILE
+cp /root/roboshop-project/user.service /etc/systemd/system/user.service &>>LOGFILE
 VALIDATE $? "copying user.service"
 
 systemctl daemon-reload &>>LOGFILE
@@ -60,7 +60,7 @@ VALIDATE $? "enabling user"
 systemctl start user &>>LOGFILE
 VALIDATE $? "staring  user"
 
-cp /home/centos/roboshop-project/mango.repo /etc/yum.repos.d/mongo.repo &>>LOGFILE
+cp /root/roboshop-project/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying mango.repo"
 
 yum install mongodb-org-shell -y &>>LOGFILE
