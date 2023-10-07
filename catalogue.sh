@@ -48,7 +48,7 @@ VALIDATE $? "unzipping"
 npm install 
 VALIDATE $? "installing npm--dependencies"
 
-cp catalogue.service /etc/systemd/system/catalogue.service &>>LOGFILE
+cp /home/centos/roboshop-project/catalogue.service /etc/systemd/system/catalogue.service &>>LOGFILE
 VALIDATE $? "copying catalogue.service"
 
 systemctl daemon-reload &>>LOGFILE
@@ -60,7 +60,7 @@ VALIDATE $? "enabling catalogue"
 systemctl start catalogue &>>LOGFILE
 VALIDATE $? "staring  catalogue"
 
-cp mango.repo /etc/yum.repos.d/mongo.repo &>>LOGFILE
+cp /home/centos/roboshop-project/mango.repo /etc/yum.repos.d/mongo.repo &>>LOGFILE
 VALIDATE $? "copying mango.repo"
 
 yum install mongodb-org-shell -y &>>LOGFILE
