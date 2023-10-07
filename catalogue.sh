@@ -24,11 +24,11 @@ then
    exit 1
 fi
 
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>LOGFILE
-VALIDATE $? "npm source setup "
+#curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>LOGFILE
+#VALIDATE $? "npm source setup "
 
-yum install nodejs -y &>>LOGFILE
-VALIDATE $? "installing nodejs"
+#yum install nodejs -y &>>LOGFILE
+#VALIDATE $? "installing nodejs"
 
 #useradd roboshop &>>LOGFILE
 #VALIDATE $? "adding user"
@@ -37,12 +37,12 @@ VALIDATE $? "installing nodejs"
 #VALIDATE $? "creating directory"
 
 
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>>LOGFILE
-VALIDATE $? "downloading app code"
+#curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>>LOGFILE
+#VALIDATE $? "downloading app code"
 
 cd /app &>>LOGFILE
 
-unzip /tmp/catalogue.zip  &>>LOGFILE
+unzip /tmp/catalogue.zip  
 VALIDATE $? "unzipping"
 
 npm install 
