@@ -25,35 +25,35 @@ then
 fi
 
 yum install python36 gcc python3-devel -y &>>LOGFILE
-VALIDATE$? "installing python"
+VALIDATE $? "installing python"
 
 useradd roboshop &>>LOGFILE
-VALIDATE$? "adding user"
+VALIDATE $? "adding user"
 
 mkdir /app &>>LOGFILE
-VALIDATE$? "making directory"
+VALIDATE $? "making directory"
 
 curl -L -o /tmp/payment.zip https://roboshop-builds.s3.amazonaws.com/payment.zip &>>LOGFILE
-VALIDATE$? "downloading app code"
+VALIDATE $? "downloading app code"
 
 cd /app &>>LOGFILE
 
 unzip /tmp/payment.zip &>>LOGFILE
-VALIDATE$? "unzipping"
+VALIDATE $? "unzipping"
 
 cd /app &>>LOGFILE
 
 pip3.6 install -r requirements.txt &>>LOGFILE
-VALIDATE$? "installling requirements"
+VALIDATE $? "installling requirements"
 
 cp /root/roboshop-project/payment.service /etc/systemd/system/payment.service &>>LOGFILE
-VALIDATE$? "copying service"
+VALIDATE $? "copying service"
 
 systemctl daemon-reload &>>LOGFILE
-VALIDATE$? "demon reloading"
+VALIDATE $? "demon reloading"
 
 systemctl enable payment &>>LOGFILE
-VALIDATE$? "enabling"
+VALIDATE $? "enabling"
 
 systemctl start payment &>>LOGFILE
-VALIDATE$? "starting payment"
+VALIDATE $? "starting payment"
