@@ -27,11 +27,11 @@ fi
 yum install maven -y &>>LOGFILE
 VALIDATE $? "installing maven"
 
-useradd roboshop &>>LOGFILE
-VALIDATE $? "adding user"
+#useradd roboshop &>>LOGFILE
+#VALIDATE $? "adding user"
 
-mkdir /app &>>LOGFILE
-VALIDATE $? "making directory"
+#mkdir /app &>>LOGFILE
+#VALIDATE $? "making directory"
 
 curl -L -o /tmp/shipping.zip https://roboshop-builds.s3.amazonaws.com/shipping.zip &>>LOGFILE
 VALIDATE $? "downloading app code"
