@@ -45,7 +45,7 @@ cd /app &>>LOGFILE
 unzip /tmp/catalogue.zip  &>>LOGFILE
 VALIDATE $? "unzipping"
 
-npm install 
+npm install -y
 VALIDATE $? "installing npm--dependencies"
 
 cp /root/roboshop-project/catalogue.service /etc/systemd/system/catalogue.service &>>LOGFILE
