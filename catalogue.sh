@@ -37,12 +37,12 @@ fi
 #VALIDATE $? "creating directory"
 
 
-#curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>>LOGFILE
-#VALIDATE $? "downloading app code"
+curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>>LOGFILE
+VALIDATE $? "downloading app code"
 
 cd /app &>>LOGFILE
 
-unzip /tmp/catalogue.zip  &>>LOGFILE
+unzip /tmp/catalogue.zip  
 VALIDATE $? "unzipping"
 
 npm install -y
