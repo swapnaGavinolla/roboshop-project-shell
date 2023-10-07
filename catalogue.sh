@@ -42,6 +42,9 @@ VALIDATE $? "downloading app code"
 
 cd /app &>>LOGFILE
 
+unzip /tmp/catalogue.zip  &>>LOGFILE
+VALIDATE $? "unzipping"
+
 npm install 
 VALIDATE $? "installing npm--dependencies"
 
