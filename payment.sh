@@ -27,11 +27,11 @@ fi
 yum install python36 gcc python3-devel -y &>>LOGFILE
 VALIDATE $? "installing python"
 
-useradd roboshop &>>LOGFILE
-VALIDATE $? "adding user"
+#useradd roboshop &>>LOGFILE
+#VALIDATE $? "adding user"
 
-mkdir /app &>>LOGFILE
-VALIDATE $? "making directory"
+#mkdir /app &>>LOGFILE
+#VALIDATE $? "making directory"
 
 curl -L -o /tmp/payment.zip https://roboshop-builds.s3.amazonaws.com/payment.zip &>>LOGFILE
 VALIDATE $? "downloading app code"
